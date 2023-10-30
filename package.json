@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "ts": "npx tsc --watch",
+    "prestart": "npx tsc",
     "start": "node ./dist/index.js",
     "lint": "npx eslint \"./**/*.js\" --cache --cache-strategy content --fix"
   },

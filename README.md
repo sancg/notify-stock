@@ -1,4 +1,4 @@
-# Notify Stock Product
+# Notify Amazon Stock
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
@@ -9,7 +9,12 @@ An app that notifies you when a product is available to purchase.
 At the moment from the items array you past the URL to generate the availability of the Product.
 
 ```typescript
-const items: Product[] = [
+interface Product {
+  name?: string;
+  url: string;
+  hasStock?: boolean;
+}
+const product: Product[] = [
   {
     name: 'Pyra and Mythra',
     url: 'https://www.amazon.com/dp/B0C2XXMPLY/?coliid=I38OD59C8PRP8C&colid=2RMR8T6DALZ0&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it_im'
