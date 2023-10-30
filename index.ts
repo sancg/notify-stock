@@ -1,16 +1,15 @@
 import { chromium } from 'playwright';
 
 interface Product {
-  name: string;
+  name?: string;
   url: string;
+  hasStock?: boolean;
 }
-const items: Product[] = [
+const products: Product[] = [
   {
-    name: 'Pyra and Mythra',
     url: 'https://www.amazon.com/dp/B0C2XXMPLY/?coliid=I38OD59C8PRP8C&colid=2RMR8T6DALZ0&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it_im'
   },
   {
-    name: 'test',
     url: 'https://www.amazon.com/Geometry-Programmers-Oleksandr-Kaleniuk/dp/1633439607'
   }
 ];
@@ -18,16 +17,19 @@ const items: Product[] = [
 void (async () => {
   // Setup
   const browser = await chromium.launch({
-    headless: true
+    headless: false
     // slowMo: 30
   });
   const page = await browser.newPage();
 
-  await page.goto(items[0].url);
+  for (const product of products) {
+    await page.goto(product.url);
+    const getTitle = (await page.textContent('#title'))?.trim();
+    const hasStock = !((await page.$('#buy-now-button')) == null);
+    product.name = getTitle;
+    product.hasStock = hasStock;
+    console.log(product);
+  }
 
-  const isAvailable = !((await page.$('#buy-now-button')) == null);
-  console.log(isAvailable);
-
-  await page.screenshot({ path: './test.png' });
   await browser.close();
 })();
