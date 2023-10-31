@@ -10,19 +10,19 @@ At the moment from the items array you past the URL to generate the availability
 
 ```typescript
 interface Product {
-  name?: string;
-  url: string;
-  hasStock?: boolean;
+    name?: string;
+    url: string;
+    hasStock?: boolean;
 }
 const product: Product[] = [
-  {
-    name: 'Pyra and Mythra',
-    url: 'https://www.amazon.com/dp/B0C2XXMPLY/?coliid=I38OD59C8PRP8C&colid=2RMR8T6DALZ0&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it_im'
-  },
-  {
-    name: 'test',
-    url: 'https://www.amazon.com/Geometry-Programmers-Oleksandr-Kaleniuk/dp/1633439607'
-  }
+    {
+        name: "Pyra and Mythra",
+        url: "https://www.amazon.com/dp/B0C2XXMPLY/?coliid=I38OD59C8PRP8C&colid=2RMR8T6DALZ0&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it_im",
+    },
+    {
+        name: "test",
+        url: "https://www.amazon.com/Geometry-Programmers-Oleksandr-Kaleniuk/dp/1633439607",
+    },
 ];
 ```
 
@@ -30,15 +30,15 @@ const product: Product[] = [
 
 TODO: adding further documentation 🌱
 
-- [Documentation](https://linktodocumentation)
+-   [Documentation](https://linktodocumentation)
 
 ## Lessons Learned
 
 How to config a project using
 
-- Typescript
-- ESlint
-- Prettier
-- Standard-with-typescript
+-   Typescript
+-   ESlint
+-   Prettier
+-   Standard-with-typescript
 
 I should write an article about it 💭
