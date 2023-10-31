@@ -1,0 +1,12 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "extends": ["plugin:@typescript-eslint/disable-type-checked", "prettier"]
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
